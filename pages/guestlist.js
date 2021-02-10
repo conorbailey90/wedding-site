@@ -53,4 +53,4 @@ const GuestList = () =>{
     )
 }
 
-module.exports = GuestList;
+export default GuestList;
