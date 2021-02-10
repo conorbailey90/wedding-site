@@ -105,9 +105,11 @@ const RSVP = () => {
                 <label>Meal option</label><br />
                 <select id="meal-option"
                     onChange={e => setMealOption(e.target.value)}>
-                    <option value="vegetarian">Vegetarian</option>
                     <option value="meat">Meat</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
                 </select><br />
+            
                 <input style={submitStyles} type="submit" value="Submit"></input>
             </form>
             

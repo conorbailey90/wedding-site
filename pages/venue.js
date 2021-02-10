@@ -39,10 +39,8 @@ const Venue = () => {
         width: '80%',
         top: '200px',
         height: '800px',
-        fontSize: '20px'
-        
+        fontSize: '20px'      
     }
-    
 
     return (
 

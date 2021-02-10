@@ -32,15 +32,18 @@ const Index = () => {
     };
 
     function animate(){
+        if(window.innerWidth > 800){
+            lerpCoords.current = {x: parseFloat(lerp(lerpCoords.current.x, coordinates.current.x, 0.01)).toFixed(2), 
+                y: parseFloat(lerp(lerpCoords.current.y, coordinates.current.y, 0.01)).toFixed(2)}
+            
+               
+            items.forEach((item, idx) => {
+                item.style.transform = `translate(-${lerpCoords.current.x * ((idx+1 == 1 ? idx + 6 : idx + 1) * 0.01)}px, -${lerpCoords.current.y * ((idx+1 == 1 ? idx + 6 : idx + 1)  * 0.01)}px)`
+            })
+            requestAnimationFrame(animate)
+        }
 
-        lerpCoords.current = {x: parseFloat(lerp(lerpCoords.current.x, coordinates.current.x, 0.01)).toFixed(2), 
-            y: parseFloat(lerp(lerpCoords.current.y, coordinates.current.y, 0.01)).toFixed(2)}
-        
-           
-        items.forEach((item, idx) => {
-            item.style.transform = `translate(${lerpCoords.current.x * ((idx+1 == 1 ? idx + 6 : idx + 1) * 0.01)}px, ${lerpCoords.current.y * ((idx+1 == 1 ? idx + 6 : idx + 1)  * 0.01)}px)`
-        })
-        requestAnimationFrame(animate)
+       
     }
 
     
