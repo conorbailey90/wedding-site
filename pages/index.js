@@ -69,8 +69,8 @@ const Index = () => {
                <div className='hero-item'></div>
                <div className='hero-item'>
                    <h2>Le Marriage</h2>
-                   <h3>Saturday, September 11, 2021</h3>
-                   <h4>Biarritz, France</h4>
+                   <h3>September 11, 2021</h3>
+                   <h4>Anglet, France</h4>
                    <Link href='/rsvp'>
                    <div className='cta'>
                        <h5>RSVP</h5>

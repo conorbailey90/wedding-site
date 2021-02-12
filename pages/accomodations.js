@@ -10,13 +10,6 @@ const Accomodations = () => {
         },200)
     },[])
 
-
-    const accomodationSectionStyles = {
-        fontSize: "30px",
-        paddingTop: 'calc(10vh + 50px)'
-       
-    }
-
     const accomodationImageStyles = {
         position: 'absolute',
         backgroundSize: 'cover',
@@ -26,7 +19,7 @@ const Accomodations = () => {
     }
 
     return (
-        <section className={sectionActive ? "active" : ""}  style={accomodationSectionStyles}>
+        <section className={sectionActive ? "accomodations active" : "accomodations"}>
             
                 <h3 style={{position: 'relative', left: '10%', marginBottom: '1rem'}}>Accomodations</h3>
 

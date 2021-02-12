@@ -7,7 +7,8 @@ const RSVP = () => {
     const [guestName, setGuestName] = useState('');
     const [guestEmail, setGuestEmail] = useState('');
     const [guestNumber, setGuestNumber] = useState('');
-    const [mealOption, setMealOption] = useState('Vegetarian');
+    const [mealOption, setMealOption] = useState('Meat');
+    const [specialReqs, setSpecialReqs] = useState('');
     const [modalActive, setModalActive] = useState(false);
 
     const [sectionActive, setSectionActive] = useState(false);
@@ -25,7 +26,8 @@ const RSVP = () => {
             name: guestName,
             email: guestEmail,
             phone: guestNumber,
-            option: mealOption
+            option: mealOption,
+            requirements: specialReqs
         }
 
         fetch('/api/rsvp', {
@@ -47,22 +49,8 @@ const RSVP = () => {
           setGuestName('');
           setGuestEmail('');
           setGuestNumber('');
+          setSpecialReqs('');
       }
-
-    let formDivStyles = {
-        position: "relative",
-        left: '10%',
-        width: '80%',
-        height: '800px'
-    }
-
-    let formStyles = {
-        position: "absolute",
-        left: 0,
-        top: '150px',
-        width: '100%',
-        height: '100%'
-    }
 
     let submitStyles = {
         width: '150px',
@@ -74,9 +62,9 @@ const RSVP = () => {
     return (
         <section className={sectionActive ? "active" : ""}>
         <RSVPModal closeModal={closeModal} className={modalClass} name={guestName} />
-        <div style={formDivStyles}>
+        <div className='rsvp-div'>
             
-            <form style={formStyles} onSubmit={handleSubmit}>
+            <form className='rsvp-form' onSubmit={handleSubmit}>
              <h1>RSVP</h1>
                 <input 
                     type='text' 
@@ -109,6 +97,14 @@ const RSVP = () => {
                     <option value="vegetarian">Vegetarian</option>
                     <option value="vegan">Vegan</option>
                 </select><br />
+                <label>Special requirements</label><br />
+                <input 
+                    type='text' 
+                    id="special-reqs" 
+                    value={specialReqs}
+                    placeholder="Special requirements"
+                    onChange={e => setSpecialReqs(e.target.value)}
+                /><br />
             
                 <input style={submitStyles} type="submit" value="Submit"></input>
             </form>

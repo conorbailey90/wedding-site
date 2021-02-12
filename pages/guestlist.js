@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react'
 const GuestList = () =>{
 
     const [guests, setGuests] = useState([]);
+   
 
     useEffect(() => {
         fetch("/api/rsvp")
@@ -21,23 +22,23 @@ const GuestList = () =>{
           )
       }, [])
 
+
       const guestListStyle = {
           position: "relative",
-          top: '120px'
+          top: '120px',
+          opacity: 1
       }
 
     return(
         <section style={guestListStyle} className="guest-list">
-            
-
             <table>
-           
                 <tbody>
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Meal choice</th>
+                        <th>Requirements</th>
                     </tr>
                 {guests.map(guest => (
                     <tr key={guest._id}>
@@ -45,6 +46,7 @@ const GuestList = () =>{
                         <td>{guest.email}</td>
                         <td>{guest.phone}</td>
                         <td>{guest.option}</td>
+                        <td>{guest.requirements}</td>     
                     </tr>
                 ))}
                 </tbody>

@@ -11,41 +11,20 @@ const Venue = () => {
         },200)
     })
 
-    const venueSectionStyles = {
-        fontSize: "30px",
-        color: '#161616',
-        position: 'relative',
-        width: '100%',
-        overflow: 'hidden'
-    }
-    
-    const imageContainerStyles = {
-        position: 'relative',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        top: '150px',
-        width: '80%',
-        maxWidth: '1400px',
-        height: '500px',
-        background: 'url(/images/espace.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-    }
-   
     const aboutContainerStyles = {
         position: 'relative',
         display: 'block',
         left: '10%',
         width: '80%',
-        top: '200px',
+        top: '1rem',
         height: '800px',
-        fontSize: '20px'      
+        fontSize: '1.2rem'      
     }
 
     return (
 
-        <section className={sectionActive ? "active" : ""} style={venueSectionStyles}>
-            <div style={imageContainerStyles}>
+        <section className={sectionActive ? "venue-section active" : "venue-section"} >
+            <div className='venue-image'>
             </div>
             <div style={aboutContainerStyles}>
                 <h3>Venue | Espace de l'Ocean</h3>

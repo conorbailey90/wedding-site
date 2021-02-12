@@ -170,7 +170,6 @@ table {
 tr {
   height: 30px;
   border-bottom: 1px solid black;
-  background-color: rgb(3, 0, 65);
 }
 td {
   padding: 10px;
@@ -233,7 +232,35 @@ td {
   display: none;
 }
 
+/* Venue */
+
+.venue-section {
+  font-size: 30px;
+  color: #161616;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: calc(10vh + 50px);
+}
+
+.venue-image {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 150px;
+  width: 80%;
+  max-width: 1400px;
+  height: 500px;
+  background: url(/images/espace.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 /* Accomodations */
+.accomodations {
+  font-size: 1.5rem;
+  padding-top: calc(10vh + 50px);
+}
 
 .accomodation {
   position: relative;
@@ -245,7 +272,22 @@ td {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   gap: 1rem;
-  font-size: 25px;
+}
+
+/* RSVP */
+
+.rsvp-div {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 800px;
+  padding-top: calc(10vh + 50px);
+}
+.rsvp-form {
+  position: relative;
+  left: 10%;
+  width: 80%;
+  height: 800px;
 }
 
 @media screen and (max-width: 800px) {
@@ -273,34 +315,34 @@ td {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 30vh;
-    height: 40vh;
+    top: 15vh;
+    height: 50vh;
     left: 0;
     width: 100%;
 
     list-style: none;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: 1.5rem;
   }
 
   .nav-links li {
     position: relative;
     width: 100%;
-    text-align: center;
+    right: 10%;
+    /* background-color: red; */
+    text-align: right;
   }
 
   .mobile-header {
     display: block;
-    position: fixed;
-    top: 0;
+    position: relative;
+    top: 0vh;
     left: 0;
     width: 100%;
     height: 10vh;
     background: #ffffff;
-    z-index: 2;
-    overflow: hidden;
+    /* overflow: hidden; */
     color: #161616;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 
   .mobile-header > h1 {
@@ -311,20 +353,21 @@ td {
   }
 
   .menu-tog {
-    position: absolute;
+    position: fixed;
     right: 10%;
-    bottom: 1rem;
+    top: 30px;
     width: 30px;
     height: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     cursor: pointer;
+    z-index: 2;
   }
   .menu-tog > span {
     width: 100%;
     height: 2px;
-    background-color: #161616;
+    background-color: #000000;
     border-radius: 10px;
   }
 
@@ -332,17 +375,18 @@ td {
 
   .hero-container {
     position: relative;
-    left: 10%;
-    top: 100px;
-    width: 80%;
-    height: 60vh;
+    left: 20%;
+    top: 1rem;
+    width: 60%;
+    height: 70vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
   }
 
   .hero-item:nth-child(1) {
     grid-area: auto;
+    background-image: url(/images/3.JPG);
   }
 
   .hero-item:nth-child(2) {
@@ -355,21 +399,51 @@ td {
   .hero-item:nth-child(4) {
     padding-top: 1rem;
     grid-area: auto;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .hero-item:nth-child(4) > h3 {
     grid-area: auto;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
+  }
+
+  .hero-item:nth-child(4) > h2 {
+    grid-area: auto;
+    font-size: 2.2rem;
   }
 
   .hero-item:nth-child(5) {
     display: none;
   }
 
+  /* Venue */
+
+  .venue-section {
+    padding-top: 1rem;
+    font-size: 10px;
+  }
+
+  .venue-image {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1400px;
+    height: 200px;
+    background: url(/images/espace.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1rem;
+  }
+
   /* Accomodation */
+  .accomodations {
+    padding-top: 1rem;
+  }
+
   .accomodation {
     position: relative;
     left: 10%;
+    padding-top: 0;
     margin: 0;
     width: 80%;
     height: 400px;
@@ -377,6 +451,21 @@ td {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
     gap: 0;
-    font-size: 20px;
+    font-size: 1.2rem;
+  }
+
+  /* RSVP  */
+  .rsvp-div {
+    position: relative;
+    left: 0;
+    padding-top: 1rem;
+    width: 100%;
+    height: 800px;
+  }
+  .rsvp-form {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    height: 800px;
   }
 }

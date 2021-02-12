@@ -4,8 +4,6 @@ import RSVP from '../../models/rsvp'
 export default async function handler(req, res) {
   const { method } = req;
 
-  console.log(method);
-
   await dbConnect();
 
   switch(method){
@@ -20,10 +18,8 @@ export default async function handler(req, res) {
       break
       case "POST":
         try{
-          console.log('here');
-          console.log(req.body)
+        
           const guest = await RSVP.create(
-           
             req.body
           )
           res.status(201).json({success: true, data: guest});
