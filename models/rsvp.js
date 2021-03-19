@@ -19,6 +19,11 @@ const RsvpSchema = new mongoose.Schema({
     required: [true, 'Please enter phone number.'],
     maxlength: [30, 'Please enter a correct phone number.'],
   },
+  attending: {
+    type: String,
+    required: [true, 'Please advise if you\'re attending.'],
+    maxlength: [50, "cheers"]
+  },
   option: {
     /* Meal option */
     type: String,

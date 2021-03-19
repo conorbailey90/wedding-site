@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
 
-
 const GuestList = () =>{
 
     const [guests, setGuests] = useState([]);

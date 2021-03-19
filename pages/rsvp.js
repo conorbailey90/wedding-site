@@ -7,7 +7,8 @@ const RSVP = () => {
     const [guestName, setGuestName] = useState('');
     const [guestEmail, setGuestEmail] = useState('');
     const [guestNumber, setGuestNumber] = useState('');
-    const [mealOption, setMealOption] = useState('Meat');
+    const [attending, setAttending] = useState('yes');
+    const [mealOption, setMealOption] = useState('');
     const [specialReqs, setSpecialReqs] = useState('');
     const [modalActive, setModalActive] = useState(false);
 
@@ -26,6 +27,7 @@ const RSVP = () => {
             name: guestName,
             email: guestEmail,
             phone: guestNumber,
+            attending: attending,
             option: mealOption,
             requirements: specialReqs
         }
@@ -50,6 +52,7 @@ const RSVP = () => {
           setGuestEmail('');
           setGuestNumber('');
           setSpecialReqs('');
+          setAttending('');
       }
 
     let submitStyles = {
@@ -70,7 +73,7 @@ const RSVP = () => {
                     type='text' 
                     value={guestName}
                     id="name" 
-                    placeholder="Full name" 
+                    placeholder="Full name - Nom complet" 
                     onChange={e => setGuestName(e.target.value)}
                     required 
                 /><br />
@@ -78,7 +81,7 @@ const RSVP = () => {
                     type="email" 
                     value={guestEmail}
                     id="email" 
-                    placeholder="Email address"
+                    placeholder="Email address - Adresse email"
                     onChange={e => setGuestEmail(e.target.value)}
                     required
                 /><br />
@@ -86,23 +89,33 @@ const RSVP = () => {
                     type='text' 
                     id="mobile" 
                     value={guestNumber}
-                    placeholder="Phone number"
+                    placeholder="Phone number - Numéro de téléphone"
                     onChange={e => setGuestNumber(e.target.value)}
                     required
                 /><br />
-                <label>Meal option</label><br />
-                <select id="meal-option"
+                <label>Attending?</label>
+                <select id="attending "
+                    onChange={e => setAttending(e.target.value)}>
+                    <option value="yes">Yes i'll be there! - Oui, je serais là !</option>
+                    <option value="no">Sorry I can't make it - Non, désolé </option>
+               
+                </select><br />
+                <label>Meal option - Préférence repas</label><br />
+                <select id="meal-preference "
                     onChange={e => setMealOption(e.target.value)}>
-                    <option value="meat">Meat</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="vegan">Vegan</option>
+                    <option value="">Please select - Sélectionnez s'il vous plaît</option>
+                    <option value="meat">Meat - Viande</option>
+                    <option value="fish">Fish - Pesco-Végétarien</option>
+                    <option value="vegetarian">Vegetarian - Végétarien</option>
+                    <option value="vegan">Vegan - Végan</option>
+                    <option value="other">Other - Autre (specify / Spécifiez) </option>
                 </select><br />
                 <label>Special requirements</label><br />
                 <input 
                     type='text' 
                     id="special-reqs" 
                     value={specialReqs}
-                    placeholder="Special requirements"
+                    placeholder="Specify - Spécifiez "
                     onChange={e => setSpecialReqs(e.target.value)}
                 /><br />
             
